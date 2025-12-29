@@ -1,0 +1,15 @@
+﻿<Project Sdk="Meziantou.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
+    <ContainerRegistry>ghcr.io</ContainerRegistry>
+    <ContainerRepository>meziantou/meziantou-file-sharing</ContainerRepository>
+    <ContainerImageTags>0.0.1-preview</ContainerImageTags>
+    <ContainerImageTags Condition="$(GITHUB_REF) == 'refs/heads/main'">1.0.$(GITHUB_RUN_NUMBER);latest</ContainerImageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Meziantou.Framework.FullPath" Version="1.1.12" />
+  </ItemGroup>
+
+</Project>

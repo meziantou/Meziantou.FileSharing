@@ -29,7 +29,7 @@ internal sealed class FileService
     public async Task AddFileAsync(string name, Stream content)
     {
         var fullPath = GetFullPath(name);
-        Directory.CreateDirectory(fullPath.Parent!);
+        Directory.CreateDirectory(fullPath.Parent);
         await using var fs = File.Create(fullPath);
         await content.CopyToAsync(fs);
     }

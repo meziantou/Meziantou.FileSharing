@@ -41,7 +41,7 @@ internal sealed class FileService
         return File.OpenRead(path);
     }
 
-    private static string GetFullPath(string name)
+    private static FullPath GetFullPath(string name)
     {
         var result = RootFolder / name;
         if (result.IsChildOf(RootFolder) == false)
